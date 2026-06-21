@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="ogp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf8f5"/>
+      <stop offset="100%" style="stop-color:#e8dfd5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogp-bg)"/>
+  <text x="600" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="48" fill="#3d3835" letter-spacing="12">elyts</text>
+  <text x="600" y="340" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#b8956a" letter-spacing="4">hÂSû7 | ·üë¨¯¹Æ</text>
+  <text x="600" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#6b6560">ê6kjX€Óýíó°x</text>
+</svg>
