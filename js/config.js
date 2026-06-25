@@ -23,7 +23,10 @@ const ELYTS_CONFIG = {
     ogp: './images/ogp.svg',
   },
   links: {
-    hotpepper: 'https://beauty.hotpepper.jp/slnH000329380/',
+    hotpepper: {
+      shibuya: 'https://beauty.hotpepper.jp/slnH000329380/',
+      omotesando: 'https://beauty.hotpepper.jp/slnH000545800/',
+    },
     instagram: 'https://www.instagram.com/elyts_hairsalon/',
     line: 'https://lin.ee/QVtkR7u',
   },
