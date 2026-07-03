@@ -10,6 +10,7 @@ const ELYTS_CONFIG = {
     },
     features: './images/3BDF975B-D0D6-4A8F-AF78-5083108B9A57.jpeg',
     beforeAfter: {
+      '60': './images/IMG_1159.jpeg',
       '70': './images/34022D9E-2075-475E-AE5B-B46011605773.jpeg',
       '80': './images/7CA67A56-E09F-49CA-A174-95CB22F14413.jpeg',
     },
