@@ -602,6 +602,13 @@ body {
     max-width: 52rem;
     margin: 0 auto;
   }
+
+  .ba-gallery--dual .ba-gallery__item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc(50% - 1rem);
+  }
 }
 
 /* Section feature / care visuals */
