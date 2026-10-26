@@ -33,6 +33,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-bottom: 5.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -592,8 +593,119 @@ body {
 .ba-single img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
+  background-color: var(--color-ivory);
+}
+
+.ba-offer {
+  max-width: 22rem;
+  margin: 0.75rem auto 0;
+  text-align: center;
+}
+
+.ba-offer__price {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+}
+
+.ba-offer__price strong {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: var(--color-gold-dark);
+  letter-spacing: 0.04em;
+}
+
+.ba-offer__note {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
+.ba-offer__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ba-offer__actions .btn {
+  width: 100%;
+  min-height: 3rem;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+/* First-view price snapshot */
+.price-snap {
+  padding: 1.75rem 0 2rem;
+  background-color: var(--color-ivory);
+  border-bottom: 1px solid var(--color-grige-light);
+  text-align: center;
+}
+
+.price-snap__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.price-snap__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  max-width: 40rem;
+  margin: 0 auto 1rem;
+  padding: 0;
+}
+
+.price-snap__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 0.75rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grige-light);
+}
+
+.price-snap__name {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.price-snap__value {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  color: var(--color-gold-dark);
+  letter-spacing: 0.04em;
+}
+
+.price-snap__value span {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  color: var(--color-text-light);
+  margin-left: 0.25rem;
+}
+
+.price-snap__note {
+  max-width: 36rem;
+  margin: 0 auto 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: var(--color-text-light);
+}
+
+.price-snap .store-buttons {
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -1059,10 +1171,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
-  padding: 0.625rem 0.25rem;
-  font-size: 0.5625rem;
+  min-height: 3.5rem;
+  padding: 0.75rem 0.25rem;
+  font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--color-text);
   transition: background-color 0.3s var(--transition-smooth);
@@ -1098,7 +1211,22 @@ body {
 /* Spacer for fixed CTA on mobile */
 @media (max-width: 767px) {
   body {
-    padding-bottom: 5rem;
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .ba-offer,
+  .price-snap,
+  .footer {
+    scroll-margin-bottom: 5.5rem;
+  }
+
+  .store-buttons .btn,
+  .price-snap .btn {
+    white-space: normal;
+  }
+
+  .ba-gallery {
+    gap: 2.5rem;
   }
 }
 

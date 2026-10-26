@@ -85,11 +85,49 @@
     });
   };
 
+  // Outbound click events. This records the click only, not a completed reservation.
+  const initClickTracking = () => {
+    const resolveEvent = (link) => {
+      if (link.dataset.track) return link.dataset.track;
+
+      const href = link.getAttribute('href') || '';
+      if (href.includes('slnH000329380') || href.includes('storeId=H000329380')) return 'booking_shibuya_click';
+      if (href.includes('slnH000545800') || href.includes('storeId=H000545800')) return 'booking_omotesando_click';
+      if (href.includes('lin.ee/QVtkR7u')) return 'line_consult_click';
+      if (href.includes('instagram.com/elyts_hairsalon')) return 'instagram_click';
+      return '';
+    };
+
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a');
+      if (!link) return;
+
+      const eventName = resolveEvent(link);
+      if (!eventName) return;
+
+      const payload = {
+        event: eventName,
+        event_type: link.dataset.trackType || 'outbound_click',
+        conversion: 'click_only',
+        store: link.dataset.store || '',
+        link_url: link.href,
+      };
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, payload);
+      }
+    });
+  };
+
   // Initialize on DOM ready
   const init = () => {
     initScrollAnimations();
     initHeaderScroll();
     initSmoothScroll();
+    initClickTracking();
   };
 
   if (document.readyState === 'loading') {
